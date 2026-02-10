@@ -1,0 +1,39 @@
+#include<stdio.h> 
+#include<unistd.h> 
+#include<sys/types.h> 
+void main() 
+{ 
+printf("\nBefore declaring FORK."); 
+printf("\nThe value of PID is : "); 
+printf("\n%d",getpid()); 
+printf("\nThe value of PPID is : "); 
+printf("\n%d",getppid()); 
+pid_t pid=fork();//Used to create child process 
+if(pid==0)//Child Process 
+{ 
+printf("\nAfter declaring FORK."); 
+printf("\nThe value of PID is zero."); 
+printf("\nThe value of PID is : "); 
+printf("\n%d",getpid()); 
+printf("\nThe value of PPID is : "); 
+printf("\n%d",getppid()); 
+} 
+else if(pid>0)//Parent Process 
+{ 
+printf("\nAfter declaring FORK."); 
+printf("\nThe value of PID is greater than zero."); 
+printf("\nThe value of PID is : "); 
+printf("\n%d",getpid()); 
+printf("\nThe value of PPID is : "); 
+printf("\n%d",getppid()); 
+} 
+else//Error 
+{ 
+printf("\nAfter declaring FORK."); 
+printf("\nThe value of PID is less than zero."); 
+printf("\nThe value of PID is : "); 
+printf("\n%d",getpid()); 
+printf("\nThe value of PPID is : "); 
+printf("%d",getppid()); 
+} 
+}
